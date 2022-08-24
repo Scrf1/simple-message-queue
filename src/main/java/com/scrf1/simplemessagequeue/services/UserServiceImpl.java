@@ -1,5 +1,6 @@
 package com.scrf1.simplemessagequeue.services;
 
+import com.scrf1.simplemessagequeue.entityDtos.UserDto;
 import com.scrf1.simplemessagequeue.models.User;
 import com.scrf1.simplemessagequeue.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,12 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public User createUser(String firstName, String lastName, String phone, String email) {
+    public User createUser(UserDto userDto) {
         User user = new User();
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setPhone(phone);
-        user.setEmail(email);
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setPhone(userDto.getPhone());
+        user.setEmail(userDto.getEmail());
         return userRepository.save(user);
     }
 
