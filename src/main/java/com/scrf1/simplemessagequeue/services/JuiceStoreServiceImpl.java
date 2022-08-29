@@ -6,9 +6,11 @@ import com.scrf1.simplemessagequeue.models.JuiceStore;
 import com.scrf1.simplemessagequeue.repositories.JuiceRepository;
 import com.scrf1.simplemessagequeue.repositories.JuiceStoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class JuiceStoreServiceImpl implements JuiceStoreService {
 
     @Autowired
