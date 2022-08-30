@@ -11,7 +11,7 @@ public interface JuiceStoreService {
     JuiceStore createJuiceStore(JuiceStoreDto dto);
     Optional<JuiceStore> getJuiceStoreById(Long id);
 
-    Juice createJuice(String name, String description, String price);
+    Juice createJuice(String name, String description, Double price);
     Optional<Juice> getJuiceById(Long id);
 
 }

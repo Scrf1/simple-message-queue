@@ -7,14 +7,14 @@ import javax.persistence.*;
 public class Juice {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "description")
     private String description;
     @Column(name = "price")
-    private String price; // price is in USD
+    private Double price; // price is in USD
 
     public Long getId() {
         return id;
@@ -40,11 +40,11 @@ public class Juice {
         this.description = description;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

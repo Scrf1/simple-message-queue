@@ -40,7 +40,7 @@ public class JuiceStoreServiceImpl implements JuiceStoreService {
     }
 
     @Override
-    public Juice createJuice(String name, String description, String price) {
+    public Juice createJuice(String name, String description, Double price) {
         if(name == null || (name != null && name.isEmpty()))
             return null;
         Juice juice = new Juice();
