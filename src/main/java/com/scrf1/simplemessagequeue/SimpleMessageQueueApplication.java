@@ -1,10 +1,12 @@
 package com.scrf1.simplemessagequeue;
 
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
+@EnableRabbit
 @EnableConfigurationProperties
 @EntityScan(basePackages = {"com.scrf1.simplemessagequeue"})
 @SpringBootApplication
