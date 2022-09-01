@@ -1,7 +1,5 @@
 package com.scrf1.simplemessagequeue.entityDtos;
 
-import javax.persistence.Column;
-
 public class UserDto {
 
     private String firstName;

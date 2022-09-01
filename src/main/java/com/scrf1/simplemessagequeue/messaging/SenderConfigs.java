@@ -9,11 +9,11 @@ import org.springframework.amqp.core.Queue;
 public class SenderConfigs {
 
     @Value("${queue.name}")
-    private String message;
+    private String queueName;
 
     @Bean
     public Queue queue() {
-        return new Queue(message, true);
+        return new Queue(queueName, true);
     }
 
 }

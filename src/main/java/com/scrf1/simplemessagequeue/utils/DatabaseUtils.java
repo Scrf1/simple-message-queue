@@ -30,18 +30,21 @@ public class DatabaseUtils implements CommandLineRunner {
         user.setPhone("+1 471 7411");
         user.setLastName("test");
         user.setFirstName("test");
-        userRepository.save(user);
+        if(!userRepository.existsByEmail(user.getEmail()))
+            userRepository.save(user);
 
         JuiceStore store = new JuiceStore();
         store.setName("Juice store test");
         store.setLocation("California US");
         store.setPhone1("+1 77775 84");
         store.setEmail1("store@gmail.com");
-        juiceStoreRepository.save(store);
+        if(!juiceStoreRepository.existsByEmail1AndEmail2(store.getEmail1(), store.getEmail2()))
+            juiceStoreRepository.save(store);
 
         Juice juice = new Juice();
         juice.setName("Pineapple strawberry");
         juice.setPrice(10.0);
-        juiceRepository.save(juice);
+        if(!juiceRepository.existsByName(juice.getName()))
+            juiceRepository.save(juice);
     }
 }

@@ -9,7 +9,7 @@ public class StoreCommandsQueue {
 
     @RabbitListener(queues = {"${queue.name}"})
     public void receive(@Payload String fileBody) {
-        
+        System.out.println("COMMAND >>>>>> " + fileBody);
     }
 
 }

@@ -15,8 +15,9 @@ public class CommandQueueSender {
     @Autowired
     private Queue queue;
 
-    public void send(JuiceCommand command) {
-        rabbitTemplate.convertAndSend(this.queue.getName(), command);
+    public String send(JuiceCommand command) {
+        rabbitTemplate.convertAndSend(this.queue.getName(), command.toString());
+        return command.toString();
     }
 
 }
